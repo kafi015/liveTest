@@ -56,26 +56,11 @@ class _HomeScreenState extends State<HomeScreen> {
           : ListView.builder(
               itemCount: apiModel.data!.length,
               itemBuilder: (context, index) {
-                if(index+1<end)
-                  {
                     return ListTile(
                       leading: Text((index + 1).toString()),
                       title: Text(apiModel.data![index].title ?? ''),
                       subtitle: Text(apiModel.data![index].body ?? ''),
                     );
-                  }
-                else if(index+1==end)
-                  {
-                    end  +=20;
-                    getAllData();
-                    setState(() {});
-                    return ListTile(
-                      leading: Text((index + 1).toString()),
-                      title: Text(apiModel.data![index].title ?? ''),
-                      subtitle: Text(apiModel.data![index].body ?? ''),
-                    );
-
-                  }
 
               }),
     );
